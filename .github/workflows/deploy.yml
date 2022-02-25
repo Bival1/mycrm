@@ -14,4 +14,4 @@ jobs:
       - run: echo "${{ secrets.key }}" > "$HOME/.ssh/nbkey1"
       - run: chmod 600 "$HOME/.ssh/nbkey1"
       # Deploy
-      - run: rsync -e "ssh -p 22 -i $HOME/.ssh/nbkey1 -o StrictHostKeyChecking=no" --archive --compress --delete . valerij@213.136.82.58:/home/www/bmax-dev.osomcrm.com
+      - run: rsync -e "ssh -p 22 -i $HOME/.ssh/nbkey1 -o StrictHostKeyChecking=no" --archive --compress --delete . 213.136.82.58:/home/www/bmax-dev.osomcrm.com
