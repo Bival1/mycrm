@@ -11,7 +11,7 @@ jobs:
     steps:
       - run: set -eu
       - run: mkdir "$HOME/.ssh"
-      - run: echo "${{ secrets.key }}" > "$HOME/.ssh/key"
-      - run: chmod 600 "$HOME/.ssh/key"
+      - run: echo "${{ secrets.key }}" > "$HOME/.ssh/nbkey1"
+      - run: chmod 600 "$HOME/.ssh/nbkey1"
       # Deploy
-      - run: rsync -e "ssh -p 20022 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . /home/www/bmax-dev.osomcrm.com
+      - run: rsync -e "ssh -p 20022 -i $HOME/.ssh/nbkey1 -o StrictHostKeyChecking=no" --archive --compress --delete . /home/www/bmax-dev.osomcrm.com
